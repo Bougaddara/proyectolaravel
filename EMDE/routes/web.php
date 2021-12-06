@@ -2,6 +2,8 @@
 use App\Http\Controllers\CrudController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SocialController;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,10 +23,7 @@ Auth::routes(['verify'=>true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 
-Route::get('/', function(){
 
-    return 'home';
-});
 
 Route::get('/redirect/{service}',[App\Http\Controllers\SocialController::class,'redirect']);
 
@@ -47,4 +46,49 @@ Route::group(['prefix' => 'offers'],function(){
          route::post('insert',[App\Http\Controllers\CrudController::class,'insert']); 
 
 });
+
+################################################################################
+#####################  authentication and guards ###############################
+################################################################################
+
+Route::get('/admin', [App\Http\Controllers\Auth\CustomAuthController::class,'admin']) -> middleware('auth:admins') -> name('admin');
+Route::get('/admin/login', [App\Http\Controllers\Auth\CustomAuthController::class,'adminlogin']) -> name('admin.login');
+Route::post('/admin/login', [App\Http\Controllers\Auth\CustomAuthController::class,'checkadminlogin']) -> name('save.admin.login');
+
+
+
+Route::get('/user', [App\Http\Controllers\Auth\CustomAuthController::class,'user']) -> middleware('auth') -> name('user');
+
+
+
+
+
+
+Route::get('/error', function(){
+    return 'no eres admin';
+}) -> name('noadmin');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

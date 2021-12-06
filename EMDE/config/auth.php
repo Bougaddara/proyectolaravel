@@ -36,13 +36,23 @@ return [
     */
 
     'guards' => [
+
+        // eso para usuario userhome
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        //eso para admin adminhome
+        'admins' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
         'api' => [
              'drivers' => 'passport',
              'provider' => 'users',
+
         ],
     ],
 
@@ -68,6 +78,12 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+
+    
 
         // 'users' => [
         //     'driver' => 'database',
