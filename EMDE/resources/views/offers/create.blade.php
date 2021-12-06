@@ -29,7 +29,7 @@
 
            <!--   <input name="_token" value="{{csrf_token()}}">     -->
             <div class="from-group">
-              <label for="exampleInputEmail1" class="form-label">Offer Name</label>
+              <label for="exampleInputEmail1" class="form-label">Offer name</label>
                 <input type="text" class="form-control" name="name" placeholder="name">
             </div>
             
