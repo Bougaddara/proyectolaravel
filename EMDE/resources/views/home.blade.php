@@ -17,8 +17,8 @@
                     {{ __('You are logged in!') }}
                 </div>
                 
-                <a href="http://localhost:8000/home/libros">Libros</a>
-                <a href="http://localhost:8000/home/categurias">Categurias</a>
+                <a href="http://5.189.148.45/EMDE/public/index.php/home/libros">Libros</a>
+                <a href="http://5.189.148.45/EMDE/public/index.php/home/categurias">Categurias</a>
 
                      
             </div>
