@@ -55,18 +55,16 @@ Route::get('/admin', [App\Http\Controllers\Auth\CustomAuthController::class,'adm
 Route::get('/admin/login', [App\Http\Controllers\Auth\CustomAuthController::class,'adminlogin']) -> name('admin.login');
 Route::post('/admin/login', [App\Http\Controllers\Auth\CustomAuthController::class,'checkadminlogin']) -> name('save.admin.login');
 
-
-
 Route::get('/user', [App\Http\Controllers\Auth\CustomAuthController::class,'user']) -> middleware('auth') -> name('user');
-
-
-
-
-
 
 Route::get('/error', function(){
     return 'no eres admin';
 }) -> name('noadmin');
+
+####################  listar libros ############################################# 
+
+Route::get('/home/libros',[App\Http\Controllers\LibrosController::class,'listarlibros'])->name('home')->middleware('verified');
+
 
 
 

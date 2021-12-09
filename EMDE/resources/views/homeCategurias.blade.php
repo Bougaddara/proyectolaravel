@@ -16,11 +16,12 @@
 
                     {{ __('You are logged in!') }}
                 </div>
-                
-                <a href="http://localhost:8000/home/libros">Libros</a>
-                <a href="http://localhost:8000/home/categurias">Categurias</a>
-
-                     
+                <ul>
+                   @foreach ( $libros as $libros)
+                    <li>{{ $libros }}</li>
+                       
+                   @endforeach 
+                </ul>
             </div>
         </div>
     </div>

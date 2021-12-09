@@ -16,10 +16,14 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+                <ul>
+                   @foreach ( $libros as $libros)
+                    <li>{{ $libros -> nombre_libro }}  {{ $libros -> precio}}</li>
+                       
+                   @endforeach 
+                </ul>
+               
                 
-                <a href="http://localhost:8000/home/libros">Libros</a>
-                <a href="http://localhost:8000/home/categurias">Categurias</a>
-
                      
             </div>
         </div>
