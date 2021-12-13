@@ -18,3 +18,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('CrearCuenta',[App\Http\Controllers\API\CrearCuentaController::class,'crearCuenta']);
+
+Route::post('IniciarSesion',[App\Http\Controllers\API\CrearCuentaController::class,'IniciarSesion']);

@@ -44,7 +44,6 @@ Route::group(['prefix' => 'offers'],function(){
          route::get('create',[App\Http\Controllers\CrudController::class,'create']); 
 
          route::post('insert',[App\Http\Controllers\CrudController::class,'insert']); 
-
 });
 
 ################################################################################
