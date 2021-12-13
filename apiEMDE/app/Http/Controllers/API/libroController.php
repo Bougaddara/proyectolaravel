@@ -92,7 +92,7 @@ class libroController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-//#####################################################################################################################
+//#################################################################################################################
     public function destroy(Libros $libros)
     {
         $errorMessage = [] ;
