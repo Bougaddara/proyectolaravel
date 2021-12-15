@@ -27,7 +27,7 @@ Route::post('IniciarSesion',[App\Http\Controllers\API\AuthController::class,'Ini
 
 Route::middleware('auth:api')->group( function (){
     Route::resource('libros',API\libroController::class)->only([
-    'index', 'show' //, 'create', 'store', 'update', 'destroy'
+    'index', 'show' , 'create', 'store', 'update', 'destroy'
     ]);
 
 });
@@ -44,9 +44,9 @@ Route::middleware('auth:api')->group( function (){
 //Route::get('/user/{id}', 'libroController@userPosts');
 
 ##########################################################################33
-Route::middleware('auth:admin')->group( function (){
+/* Route::middleware('auth:admin')->group( function (){
     Route::resource('libros',AdminController::class)->only([
     'index', 'show', 'create', 'store', 'update', 'destroy'
     ]);
 
-});
+});*/
