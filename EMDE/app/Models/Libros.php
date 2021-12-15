@@ -11,6 +11,6 @@ class Libros extends Model
 
     protected $table = "libros"; // eso pra el model puede ver  la tabra q hay en BD si el nombre de la tabla deferente 
     
-    protected $fillable = ['libro_id','nombre_libro','','descripcion','categoriaid','editorid','precio','entrega','imagen'];// eso pata insertar update para inseniar datas generalmente 
+    protected $fillable = ['id','nombre_libro','','descripcion','categoriaid','editorid','precio','entrega','imagen'];// eso pata insertar update para inseniar datas generalmente 
 
 }

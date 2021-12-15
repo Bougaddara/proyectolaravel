@@ -48,12 +48,12 @@ return [
             'provider' => 'users',
 
        ],
-
+/*
         //eso para admin adminhome
         'admins' => [
             'driver' => 'session',
             'provider' => 'admins',
-        ],
+        ],*/
 
         
     ],

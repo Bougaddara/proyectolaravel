@@ -1,0 +1,6 @@
+{
+    "require": {
+        "tymon/jwt-auth": "^1.0",
+        "laravel/ui": "^3.4"
+    }
+}

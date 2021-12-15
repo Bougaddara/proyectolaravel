@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\libroController;
 use App\Http\Resources\libros;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -25,10 +26,27 @@ Route::post('IniciarSesion',[App\Http\Controllers\API\AuthController::class,'Ini
 
 
 Route::middleware('auth:api')->group( function (){
-    Route::resource('libros', libroController::class)->only([
-        'index', 'show'
+    Route::resource('libros',API\libroController::class)->only([
+    'index', 'show' //, 'create', 'store', 'update', 'destroy'
     ]);
 
 });
-Route::resource('libros','libroController');
-    //Route::get('/user/{id}', 'libroController@userPosts');
+
+/*Route::middleware('auth:api')->group( function (){
+    Route::resource('libros', 'API\libroController');
+});*/
+
+
+//Route::resource('libros','libroController');
+
+
+
+//Route::get('/user/{id}', 'libroController@userPosts');
+
+##########################################################################33
+Route::middleware('auth:admin')->group( function (){
+    Route::resource('libros',AdminController::class)->only([
+    'index', 'show', 'create', 'store', 'update', 'destroy'
+    ]);
+
+});
