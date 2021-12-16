@@ -22,6 +22,6 @@ class AdminAuth
             }
 
         }
-        return 'tiens q inseniar el sesion';
+        return 'tienes q inseñar el sesion';
     }
 }

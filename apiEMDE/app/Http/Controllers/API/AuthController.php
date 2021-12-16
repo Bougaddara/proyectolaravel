@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\API;
-
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
@@ -32,10 +32,6 @@ class AuthController extends BaseController
         $success['token'] = $user->createToken('Mohamed')->accessToken;
        // var_dump($success['token']);
 
-       
-      
-
-
         $success['name'] = $user->name;
         return $this->sendResponse($success, '¡Usuario registrado exitosamente!' );
     }
@@ -56,6 +52,17 @@ class AuthController extends BaseController
         }
 
     }
+   
+
+    public function CerrarSession(){
+        //elimina el token de oauth_access_token.
+        Auth()->user()->token()->revoke();
+
+        return  response()->json([
+            'message' => 'Sesión finalizada con éxito',
+        ]);
+    }
+
 }
 
 ################################################################

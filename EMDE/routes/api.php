@@ -18,17 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('CrearCuenta',[App\Http\Controllers\API\AuthController::class,'crearCuenta']);
-
-Route::post('IniciarSesion',[App\Http\Controllers\API\AuthController::class,'IniciarSesion']);
 
 
-Route::middleware('auth:api')->group( function (){
-    Route::resource('libros',API\libroController::class)->only([
-    'index', 'show' , 'create', 'store', 'update', 'destroy'
-    ]);
 
-});
+
 
 /*Route::middleware('auth:api')->group( function (){
     Route::resource('libros', 'API\libroController');

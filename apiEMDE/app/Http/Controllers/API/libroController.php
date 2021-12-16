@@ -65,9 +65,11 @@ class libroController extends BaseController
     {
         $input = $request->all();
         $validator = Validator::make($input,[
+            'categoriaid'=>'required',
             'nombre_libro'=>'required',
             'descripcion'=>'required',
-            'precio'=>'required'
+            'precio'=>'required',
+            'editorid'=>'required'
 
         ]);
         if ($validator->fails()) {
@@ -76,8 +78,11 @@ class libroController extends BaseController
 
 
        // if ( $libros->user_id != Auth::id()) {
-        //    return $this->sendError('no tienes acceso' , $validator->errors());
+       // return $this->sendError('no tienes acceso' , $validator->errors());
        // }
+        $libros = new Libros;
+        $libros->editorid = $input['editorid'];
+        $libros->categoriaid = $input['categoriaid'];
         $libros->nombre_libro = $input['nombre_libro'];
         $libros->descripcion = $input['descripcion'];
         $libros->precio = $input['precio'];

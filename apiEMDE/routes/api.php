@@ -24,11 +24,18 @@ Route::post('CrearCuenta',[App\Http\Controllers\API\AuthController::class,'crear
 
 Route::post('IniciarSesion',[App\Http\Controllers\API\AuthController::class,'IniciarSesion']);
 
+//Route::post('CerrarSession',[App\Http\Controllers\API\AuthController::class,'CerrarSession']);
+//Route::get('CerrarSession',[App\Http\Controllers\API\AuthController::class,'CerrarSession']);
+
 
 Route::middleware('auth:api')->group( function (){
     Route::resource('libros',API\libroController::class)->only([
-    'index', 'show' , 'create', 'store', 'update', 'destroy'
+    'index', 'show', 'create', 'store', 'destroy'
     ]);
+    route::put('update',[App\Http\Controllers\API\libroController::class,'update']);
+
+    Route::get('CerrarSession',[App\Http\Controllers\API\AuthController::class,'CerrarSession']);
+
 
 });
 
