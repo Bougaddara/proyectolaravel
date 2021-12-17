@@ -55,7 +55,6 @@ class AuthController extends BaseController
    
 
     public function CerrarSession(){
-        //elimina el token de oauth_access_token.
         Auth()->user()->token()->revoke();
 
         return  response()->json([

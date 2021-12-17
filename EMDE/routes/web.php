@@ -30,10 +30,6 @@ Route::get('/redirect/{service}',[App\Http\Controllers\SocialController::class,'
 Route::get('/callback/{service}',[App\Http\Controllers\SocialController::class,'callback']);
 
 
-//Route::get('/callback/{service}',SocialController::class);
-//Route::get('/redirect/{service}','SocialController@redirect');
-//Route::get('/callback/{service}','SocialController@callback');
-
 
 Route::get('fillable',[App\Http\Controllers\CrudController::class,'getOffers']);
   
