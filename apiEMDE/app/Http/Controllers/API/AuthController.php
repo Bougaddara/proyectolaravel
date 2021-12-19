@@ -55,7 +55,6 @@ class AuthController extends BaseController
 
     public function CerrarSession(){
         Auth()->user()->token()->revoke();
-
         return  response()->json([
             'message' => 'Sesión finalizada con éxito',
         ]);
